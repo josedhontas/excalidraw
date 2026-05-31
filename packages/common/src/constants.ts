@@ -9,7 +9,7 @@ import { COLOR_PALETTE } from "./colors";
 export const supportsResizeObserver =
   typeof window !== "undefined" && "ResizeObserver" in window;
 
-export const APP_NAME = "Excalidraw";
+export const APP_NAME = "Dhonatas Draw";
 
 // distance when creating text before it's considered `autoResize: false`
 // we're using higher threshold so that clicks that end up being drags
@@ -475,7 +475,7 @@ export const EDITOR_LS_KEYS = {
  * not translated as this is used only in public, stateless API as default value
  * where filename is optional and we can't retrieve name from app state
  */
-export const DEFAULT_FILENAME = "Untitled";
+export const DEFAULT_FILENAME = "Sem título";
 
 export const STATS_PANELS = { generalStats: 1, elementProperties: 2 } as const;
 

@@ -4,6 +4,7 @@ import type { NestedKeyOf } from "@excalidraw/common/utility-types";
 
 import { useAtomValue, editorJotaiStore, atom } from "./editor-jotai";
 import fallbackLangData from "./locales/en.json";
+import defaultLangData from "./locales/pt-BR.json";
 import percentages from "./locales/percentages.json";
 
 const COMPLETION_THRESHOLD = 85;
@@ -16,7 +17,7 @@ export interface Language {
 
 export type TranslationKeys = NestedKeyOf<typeof fallbackLangData>;
 
-export const defaultLang = { code: "en", label: "English" };
+export const defaultLang = { code: "pt-BR", label: "Português Brasileiro" };
 
 export const languages: Language[] = [
   defaultLang,
@@ -68,6 +69,7 @@ export const languages: Language[] = [
   ]
     .filter(
       (lang) =>
+        lang.code !== defaultLang.code &&
         (percentages as Record<string, number>)[lang.code] >=
         COMPLETION_THRESHOLD,
     )
@@ -87,7 +89,7 @@ if (isDevEnv()) {
 }
 
 let currentLang: Language = defaultLang;
-let currentLangData = {};
+let currentLangData: any = defaultLangData;
 
 export const setLanguage = async (lang: Language) => {
   currentLang = lang;
