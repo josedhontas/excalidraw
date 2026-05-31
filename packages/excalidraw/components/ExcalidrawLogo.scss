@@ -28,9 +28,24 @@
     }
 
     .ExcalidrawLogo-text {
+      display: none;
       margin-left: 0.75rem;
       width: auto;
       color: var(--color-logo-text);
+      font-family: var(--font-family-hand-drawn);
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    &.has-text::after {
+      content: "Dhonatas Draw";
+      margin-left: 0.75rem;
+      color: var(--color-logo-text);
+      font-family: var(--font-family-hand-drawn);
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
     }
 
     &.is-mobile {
@@ -39,8 +54,13 @@
       }
 
       .ExcalidrawLogo-text {
-        height: var(--logo-text--mobile);
+        font-size: var(--logo-text--mobile);
         margin-left: 0.5rem;
+      }
+
+      &.has-text::after {
+        margin-left: 0.5rem;
+        font-size: var(--logo-text--mobile);
       }
     }
 
@@ -50,7 +70,11 @@
       }
 
       .ExcalidrawLogo-text {
-        height: var(--logo-text--xs);
+        font-size: var(--logo-text--xs);
+      }
+
+      &.has-text::after {
+        font-size: var(--logo-text--xs);
       }
     }
 
@@ -60,7 +84,11 @@
       }
 
       .ExcalidrawLogo-text {
-        height: var(--logo-text--small);
+        font-size: var(--logo-text--small);
+      }
+
+      &.has-text::after {
+        font-size: var(--logo-text--small);
       }
     }
 
@@ -70,7 +98,11 @@
       }
 
       .ExcalidrawLogo-text {
-        height: var(--logo-text--normal);
+        font-size: var(--logo-text--normal);
+      }
+
+      &.has-text::after {
+        font-size: var(--logo-text--normal);
       }
     }
 
@@ -80,7 +112,11 @@
       }
 
       .ExcalidrawLogo-text {
-        height: var(--logo-text--large);
+        font-size: var(--logo-text--large);
+      }
+
+      &.has-text::after {
+        font-size: var(--logo-text--large);
       }
     }
   }

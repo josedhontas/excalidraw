@@ -61,7 +61,10 @@ export const ExcalidrawLogo = ({
   withText,
 }: LogoProps) => {
   return (
-    <div className={`ExcalidrawLogo is-${size}`} style={style}>
+    <div
+      className={`ExcalidrawLogo is-${size}${withText ? " has-text" : ""}`}
+      style={style}
+    >
       <LogoIcon />
       {withText && <LogoText />}
     </div>
